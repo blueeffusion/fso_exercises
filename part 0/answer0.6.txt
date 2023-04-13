@@ -1,0 +1,19 @@
+1. 304 spa.html
+2. 304 main.css
+3. 304 spa.js
+4. 200 data.json
+
+user creates a new note using the single-page version of the app.
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+        {content: "hello test", date: "2023-04-13T02:40:03.133Z"}
+    activate server
+    server-->>201
+    deactivate server
+
+
+

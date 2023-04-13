@@ -1,0 +1,26 @@
+user goes to the single-page app version https://studies.cs.helsinki.fi/exampleapp/spa.
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server-->>304 https://studies.cs.helsinki.fi/exampleapp/spa
+    deactivate server
+
+    browser->>server: https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: 304 https://studies.cs.helsinki.fi/exampleapp/main.css
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate server
+    server-->>browser: 304 https://studies.cs.helsinki.fi/exampleapp/spa.js
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: 200 https://studies.cs.helsinki.fi/exampleapp/data.json
+    deactivate server
+
